@@ -1,0 +1,9 @@
+.공백, .공백2{margin-left: 50px;}
+#개인정보 li label {
+    width: 50px;
+    text-align: left;
+    float: left;
+    display: block;
+}
+*{list-style: none;}
+#디브개인{width: 600px;}

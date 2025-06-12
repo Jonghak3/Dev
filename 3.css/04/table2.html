@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            caption-side: bottom;
+            border: 1px solid black;
+            border-collapse: collapse;
+            position: relative;
+        }
+        th, td{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th{text-align: left;}
+        .last{background-color: #e5f6f6;}
+        caption{
+            position: absolute;
+            bottom: -30px;
+            right: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>출처: 통계청 100대 지표</caption>
+        <thead>
+            <tr>
+                <th scope="col">지표</th>
+                <th scope="col">2019</th>
+                <th scope="col">2020</th>
+                <th scope="col">2021</th>
+                <th scope="col" class="last">2022</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">가구수</th>
+                <td>20,891,348</td>
+                <td>21,484,785</td>
+                <td>22,022,753</td>
+                <td class="last">22,383,187</td>
+            </tr>
+            <tr>
+                <th scope="row"
+                >1인가구</th>
+                <td>6,147,516</td>
+                <td>6,643,354</td>
+                <td>7,165,788</td>
+                <td class="last">7,502,350</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

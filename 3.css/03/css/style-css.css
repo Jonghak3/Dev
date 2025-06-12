@@ -1,0 +1,39 @@
+/* 전체 컨테이너 스타일 */
+#container{
+    width: 520px;
+    border: 1px solid black;
+    padding: 20px 40px;
+    margin: 0 auto;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+li{
+    line-height: 30px;
+}
+
+li label[for]{
+    width: 60px;
+    display: inline-block;      /* 인라인-블록 : 한줄에 배치되면서도 너비/높이 조절 가능 */
+    text-align: left;
+}
+
+/*
+    개인정보 들여쓰기 (ul)
+        - h4:nth-of-type(1) => 첫 번째 h4요소(개인정보)를 선택
+        - + ul => 해당 h4 바로 다음에 오는 ul 요소를 선택
+*/
+h4:nth-of-type(1) + ul{
+    margin-left: 30px;
+}
+/*
+    지원분야 들여쓰기 (ul)
+        - h4:nth-of-type(2) => 두 번째 h4요소(지원분야)를 선택
+        - + ul => 해당 h4 바로 다음에 오는 ul 요소를 선택
+*/
+h4:nth-of-type(2) + ul{
+    margin-left: 30px;
+}
