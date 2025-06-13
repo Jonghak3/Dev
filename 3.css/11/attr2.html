@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            width: 120px;
+            display: inline-block;
+            margin: 10px;
+        }
+        li a {
+            padding: 5px 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        /*href 속성이 있는 a 요소의 스타일 지정하기기*/
+        a[target=_blank] {
+            padding-right: 30px;
+            background: url(images/bg.jpg) no-repeat center right;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="https://apple.com/" target="_blank">Apple</a></li>
+        <li><a href="https://www.apple.com/kr/shop/buy-ipad/ipad-pro">아이패드 프로</a></li>
+        <li><a href="https://www.apple.com/kr-edu/shop/buy-mac/macbook-pro">맥북 프로</a></li>
+    </ul>
+</body>
+</html>

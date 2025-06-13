@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        li {
+            width: 120px;
+            display: inline-block;
+            margin: 10px;
+        }
+        li a {
+            padding: 5px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        /*속성 값의 끝 부분이 일치하는 요소에 스타일 지정정*/
+        a[href$=hwp] {
+            background: url(images/bg.jpg) no-repeat left center;
+        }
+        a[href$=xls] {
+            background: url(images/coffee.jpg) no-repeat left center;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="intro.hwp">hwp 파일</a></li>
+        <li><a href="intro.xls">엑셀 파일</a></li>
+    </ul>
+</body>
+</html>
