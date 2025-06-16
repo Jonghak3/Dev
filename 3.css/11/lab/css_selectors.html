@@ -8,15 +8,48 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         body {
             background: linear-gradient(135deg, #1929ff, #e204ff);
+            text-align: center;
+            height: 100vh;
+            line-height: 1.6;
         }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr ;
+            grid-template-rows: 80px 1fr 60px ;
+            width: 100%;
+            color: white;
+            max-width: 1200px;  /*최대 너비*/
+            min-height: 100vh;  /*최소 높이를 화면 전체 높이로 설정*/
+            margin: 0 auto;     /*컨테이너를 가로 중앙에 배치*/
+            padding: 20px;
+        }
+        .header{
+            background: rgb(17, 9, 48);
+            width: 60%;
+            margin: 20px auto;
+            border-radius: 10px 10px 0 0;
+            color: white;
+            padding: 20px;
+            display: grid;
+        }
+        .header p {
+            padding: 10px;
+        }
+        main {
+            padding: 20px;
+            text-align: left;
+            display: flex;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <header class="header">
             <h1>이개발(Lee Developer)</h1>
             <p>자바 백엔드 개발 지원자</p>
         </header>
