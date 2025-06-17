@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #1fffec, #04aa36);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        /*메인 컨테이너*/
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #2d3136;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid#ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #a29bfe;
+        }
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: #1fffec;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: backgroud 0.3;
+        }
+        .btn:hover {
+            background: #04aa36;
+        }
+        .result-card {
+            background: #e8f4fd;
+            border: 2px solid #74b9ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .result-emoji {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .result-text {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2d3436;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊점수 등급 계산기</h1>
+
+        <h3>📝점수를 입력하고 등급을 확인해보세요!</h3>
+
+        <div class="input-group">
+            <label for="scoreInput">점수 입력(0 - 100점)</label>
+            <input type="number" id="scoreInput" placeholder="25" min="0" max="120">
+        </div>
+
+        <button class="btn" onclick="checkGrade()">📊등급 계산하기</button>
+        <div id="gradeResult" class="result-card hidden">
+            <div id="scoreEmoji" class="result-emoji"></div>
+            <div id="scoreGrade" class="result-grade"></div>
+            <div id="scoretext" class="result-text"></div>
+        </div>
+    </div>
+    <script>
+        function checkAge() {
+            let scoreInput = document.getElementById("scoreInput").value
+        }
+                    // 숫자 검증 - 숫자가 아닌 값 체크
+            // 경고창 띄우기 (숫자만 입력해 주세요!)
+
+
+            // 범위 검증 - 나이가 올바른 범위인지 체크
+
+
+            // 음수라면 - 나이는 0일 수 없어요! 1 이상 입력해주세요!
+
+
+            // 120세 초과라면
+            // 경고창 띄우기 (나이를 120세를 초과할 수 없어요!)
+
+
+            // 정확히 0이라면
+            // 경고창 띄우기 (나이는 0일 수 없어요! 1이상 입력해주세요!)
+
+
+            // 소수점 검증 (Math.floor(), 나이는 정수로 입력해주세요!)
+
+
+            // 모든 검증 통과 (나이에 따른 분류하기)
+            // 65세 이상 => 세는 어르신이시네요! 건강하세요
+            // 20세 이상 => 세는 성인입니다! 성인 인증 완료
+            // 14세 이상 => 세는 청소년입니다! 보호자 동의가 필요해요
+            // 14세 미만 => 세는 어린이입니다! 부모님과 함께 이용하세요.
+
+
+            // 결과를 화면에 보여주기
+
+
+            // 콘솔에 결과 출력하기
+    </script>
+</body>
+</html>
