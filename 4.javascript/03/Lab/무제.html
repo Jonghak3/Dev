@@ -105,40 +105,33 @@
     </div>
     <script>
         function checkAge() {
-            let scoreInput = document.getElementById("scoreInput").value
+            let scoreInput = document.getElementById("scoreInput").value;
+
+            if(scoreInput === "") {
+                alert("점수를 입력해주세요!");
+                document.getElementById(scoreInput).focus();
+                return;
+            }
+            let score = Number(scoreInput)
+            
+            if(score isNaN(score) || score.trim() === "") {
+                alert("숫자만 입력해 주세요!");
+                document.getElementById("scoreInput").value = ""; // 입력칸비우기
+                document.getElementById("scoreInput").focus();  //입력칸에 커서 이동.
+                return;
+            }
+
+            if(score < 0) {
+                alert("점수는 0보다 작을 수 없어요!");
+                document.getElementById("scoreInput").value = ""; // 입력칸비우기
+                document.getElementById("scoreInput").focus();  //입력칸에 커서 이동.
+                return;
+            }
+
+
         }
-                    // 숫자 검증 - 숫자가 아닌 값 체크
-            // 경고창 띄우기 (숫자만 입력해 주세요!)
 
-
-            // 범위 검증 - 나이가 올바른 범위인지 체크
-
-
-            // 음수라면 - 나이는 0일 수 없어요! 1 이상 입력해주세요!
-
-
-            // 120세 초과라면
-            // 경고창 띄우기 (나이를 120세를 초과할 수 없어요!)
-
-
-            // 정확히 0이라면
-            // 경고창 띄우기 (나이는 0일 수 없어요! 1이상 입력해주세요!)
-
-
-            // 소수점 검증 (Math.floor(), 나이는 정수로 입력해주세요!)
-
-
-            // 모든 검증 통과 (나이에 따른 분류하기)
-            // 65세 이상 => 세는 어르신이시네요! 건강하세요
-            // 20세 이상 => 세는 성인입니다! 성인 인증 완료
-            // 14세 이상 => 세는 청소년입니다! 보호자 동의가 필요해요
-            // 14세 미만 => 세는 어린이입니다! 부모님과 함께 이용하세요.
-
-
-            // 결과를 화면에 보여주기
-
-
-            // 콘솔에 결과 출력하기
+                
     </script>
 </body>
 </html>
