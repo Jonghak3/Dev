@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <script>       
+        (function() {
+            let userName = prompt("이름을 입력하세요.")
+            let userAge = parseInt(prompt("나이를 입력하세요."))
+            let asdfa;
+            document.write(`<p>안녕하세요. <span>${userName}</span>님!</p>`);
+            if(userAge )
+            if(userAge < 20) {
+                document.write(`<p>당신은 <span>미성년자</span>입니다.</p>`)
+            } else {
+                document.write(`<p>당신은 <span>성인</span>입니다.</p>`)
+            }
+        }())
+    </script>
+</body>
+</html>
