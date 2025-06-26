@@ -257,6 +257,42 @@
                     console.log(`${index+1}번째 : ${employee.name}`)
                 }
             });
+
+            //홀수번째 직원들의 통계 계산
+            let oddPositionSalaryTotal = 0;
+            oddPositionEmployees.forEach((emp) => {
+                oddPositionSalaryTotal += emp.salary;
+            });
+
+            // 평균 급여
+            const oddPositionSalaryAvg = Math.round(oddPositionSalaryTotal/oddPositionEmployees.length);
+
+            //화면 출력
+            result += `📈 홀수 번째 직원 통계:\n`;
+            result += `  총 인원: ${oddPositionEmployees.length}명\n`;
+            result += `  총 급여: ${oddPositionSalaryTotal.toLocaleString()}원\n`;
+            result += `  평균 급여: ${oddPositionSalaryAvg.toLocaleString()}원\n`;
+
+            //부서별 분포 계산 - 객체 카운팅 패턴
+            const departmentCount = {}; // 부서별 인원수를 저장할 빈객체 생성
+            /*
+                departmentCount[emp.department]: 해당 부서의 현재 카운트 값
+                1차 : departmentCount["개발팀"] = ((undefined || 0) + 1 = 1
+                2차 : departmentCount["개발팀"] = (1 || 0) + 1 = 2
+                3차 : departmentCount["영업팀"] = (undefined || 0) + 1 = 1
+            */
+            oddPositionEmployees.forEach(emp => {
+                departmentCount[emp.department] = (departmentCount[emp.department] || 0) + 1
+            });
+            
+
+            result += `\n🏢 부서별 분포:\n`;
+            Object.entries(departmentCount).forEach(([dept, count]) => {
+                    result += ` ${dept}: ${count}명\n`;
+                });
+            
+
+            output.textContent = result;
         }
     </script>
 </body>
