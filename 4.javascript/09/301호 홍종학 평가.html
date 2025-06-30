@@ -76,7 +76,7 @@
             border-radius: 5px;
             margin: 10px 0;
             font-family: monospace;
-            white-space: pre-line;  /*줄 바꿈을 유지하기 위해*/
+            white-space: pre-line;
         }
     </style>
 </head>
@@ -98,17 +98,14 @@
         </div>
         <div class="section">
             <h2>🔧평가 문제</h2>
-            <button onclick="displayAllEmployees()">1. 전체 직원 목록 출력</button>
-            <button onclick="displayEmployeesByDepartment()">2. 부서별 직원 출력</button>
-            <button onclick="findOddPositionEmployees()">3. 홀수 번째 직원들</button>
-            <button onclick="demonstrateIndexUsage()">4. 인덱스 활용 패턴</button>
-
+            <button onclick="salary_report()">1. 급여 리포트 출력</button>
+            <button onclick="contact_list()">2. 연락처 리스트 출력</button>
+            <button onclick="data_processing()">3. 조건부 데이터 처리</button>
 
             <div id="output" class="output"></div>
         </div>
     </div>
     <script>
-        //직원 데이터 구조
         const employees = [
             {
                 id: 1,
@@ -191,139 +188,66 @@
             console.log("직원 카드가 성공적으로 표시되었습니다.")
         };
 
-        //1. 전체 직원 목록을 화면, 콘솔에 출력
-        function displayAllEmployees() {
+        //1. 직업 급여 리포트틀 화면, 콘솔에 출력
+        function salary_report() {
             const output = document.getElementById('output');
-            let result = "==== 전체 직원 목록 ====\n\n";
-
+            let result = "==== 직원 급여 리포트 ====\n\n";
+            let totalSalary = 0;
             //forEach 
-            employees.forEach((employee) => {
-                result += `${employee.name} - ${employee.department} ${employee.position}\n`;
-                console.log(`${employee.name} - ${employee.department} ${employee.position}`);
-            });
-
-            output.textContent = result;
-        }
-
-        //2. 부서별로 직원을 그룹화하여 출력
-        function displayEmployeesByDepartment() {
-            const output = document.getElementById("output");
-            let result = "==== 부서별 직원 현황 ====\n\n";
-
-            //부서별 그룹화을 위한 객체
-            const departmentGroups = {};
-
-            //forEach를 사용하여 부서별로 그룹화 
-            employees.forEach((employee) => {
-                //부서가 없으면 빈 배열로 초기화
-                if(!departmentGroups[employee.department]) {
-                    departmentGroups[employee.department] = [];
-                }
-                //해당 부서에 직원 추가
-                departmentGroups[employee.department].push(employee);
-            });
-
-            // 각 부서별로 직원 목록 출력
-            Object.keys(departmentGroups).forEach((department) => {
-                result += `📁 ${department}:\n`;
-                //해당 부서의 직원들을 순회하면 출력
-                departmentGroups[department].forEach((employee, index) => {
-                    result += `  ${index + 1}. ${employee.name} (${employee.position})\n`;
-                });
-                result += "\n"
-            })
-
-            output.textContent = result;
-        }
-
-        //3.홀수번째 직원들
-        function findOddPositionEmployees() {
-            const output = document.getElementById('output');
-            let result = "==== 홀수 번째 직원들 ====\n\n";
-            
-            result += "🔢 조건: 목록에서 홀수 번째 위치 (1, 3, 5번째)에 있는 직원\n\n"
-            result += "📋 홀수 번째 직원 목록:\n"
-
-            output.textContent = result;
-
-            //홀수 번째 직원들 저장할 배열
-            let oddPositionEmployees = [];
             employees.forEach((employee, index) => {
-                if((index+1) % 2 !== 0) {       //홀수번째 직원 배열에 추가
-                    oddPositionEmployees.push(employee);
-                    result += ` ${index+1}번째: ${employee.name}\n`;
-                    result += `직책: ${employee.position}\n`
-                    result += `부서: ${employee.department}\n`
-                    result += `급여: ${employee.salary.toLocaleString()}원\n`;
-
-                    console.log(`${index+1}번째 : ${employee.name}`)
-                }
+                
+                result += `${index + 1}. ${employee.name}: ${employee.salary.toLocaleString()}원\n`;
+                totalSalary += Number(employee.salary);
+                console.log(totalSalary);
             });
+            let averageSalary = Math.round(totalSalary/employees.length);
+            result += `\n💰 총 급여: ${totalSalary.toLocaleString()}원\n`;
+            result += `📊 평균 급여: ${averageSalary.toLocaleString()}원\n`;
+            result += `👥 총 직원 수: ${employees.length}명`;
 
-            //홀수번째 직원들의 통계 계산
-            let oddPositionSalaryTotal = 0;
-            oddPositionEmployees.forEach((emp) => {
-                oddPositionSalaryTotal += emp.salary;
-            });
-
-            // 평균 급여
-            const oddPositionSalaryAvg = Math.round(oddPositionSalaryTotal/oddPositionEmployees.length);
-
-            //화면 출력
-            result += `📈 홀수 번째 직원 통계:\n`;
-            result += `  총 인원: ${oddPositionEmployees.length}명\n`;
-            result += `  총 급여: ${oddPositionSalaryTotal.toLocaleString()}원\n`;
-            result += `  평균 급여: ${oddPositionSalaryAvg.toLocaleString()}원\n`;
-
-            //부서별 분포 계산 - 객체 카운팅 패턴
-            const departmentCount = {}; // 부서별 인원수를 저장할 빈객체 생성
-            /*
-                departmentCount[emp.department]: 해당 부서의 현재 카운트 값
-                1차 : departmentCount["개발팀"] = ((undefined || 0) + 1 = 1
-                2차 : departmentCount["개발팀"] = (1 || 0) + 1 = 2
-                3차 : departmentCount["영업팀"] = (undefined || 0) + 1 = 1
-            */
-            oddPositionEmployees.forEach(emp => {
-                departmentCount[emp.department] = (departmentCount[emp.department] || 0) + 1
-            });
-            
-
-            result += `\n🏢 부서별 분포:\n`;
-            Object.entries(departmentCount).forEach(([dept, count]) => {
-                    result += ` ${dept}: ${count}명\n`;
-                });
-            
 
             output.textContent = result;
         }
 
-        // 4. 인덱스 사용법
-        function demonstrateIndexUsage() {
-            //결과를 출력할 DOM 요소 선택
-            const output = document.getElementById("output");
-            // 결과 문자열 초기화
-            let result = "==== 인덱스 활용 패턴 ====\n\n";
-
-            result += "⛨ forEach에서 인덱스를 활용하는 다양한 패턴들\n\n"
-            //패턴1 : 순번 표시 (1부터 시작) - 가장 기본적인 패턴
-            result += "1️⃣ 순번 표시 패턴:\n"
-            employees.forEach((employee,index) => {
-                result += `${index + 1}번. ${employee.name}\n`
+        //2. 연락처 리스트 출력
+        function contact_list() {
+            const output = document.getElementById('output');
+            let result = "==== 연락처 리스트 출력 ====\n";
+            employees.forEach((employee, index)=>{
+                result += `\n${index + 1}. ${employee.name}\n`;
+                result += `📞 ${employee.phone}\n`
+                result += `📧 ${employee.email}\n`
+                if(employee.department.includes("개발팀")){
+                    result += `💻 ${employee.department} 소속\n`;
+                }
             });
 
-            //
-            result += " 첫 번째/마지막 요소 특별처리\n"
-            
-            employees.forEach((employee, index, arry) => {
-                if(index === 0){
-                    result += `첫 번째: ${name}\n`
-                } else if (index) {
-                    ``
-                } else {
-                    
+
+            output.textContent = result;
+        }
+
+        //3. 조건부 데이터 처리
+        function data_processing() {
+            const output = document.getElementById('output');
+            let result = "==== 조건부 데이터 처리 ====\n\n";
+            result += "🎯 다양한 조건으로 직원 데이터 처리하기\n\n";
+            result += "💰 고급여 직원 (5000만원 이상):\n";
+
+            employees.forEach((employee, index)=>{
+                if(employee.salary >= 50000000){
+                    result += `✅ ${employee.name}: ${employee.salary.toLocaleString()}원\n`
                 }
-        
+            });
+            result += "\n💻 개발팀 베테랑 (입사 2년 이상):\n";
+            employees.forEach((employee, index)=>{
+                const now = new Date().getFullYear();
+                const hireDate = new Date(employee.hireDate).getFullYear(employee.hireDate);
+                const workingYears = now - hireDate;
+                if(employee.department.includes("개발팀") && workingYears > 2){
+                    result += `✅ ${employee.name}: ${workingYears}년차\n`
+                }
             })
+
 
             output.textContent = result;
         }
