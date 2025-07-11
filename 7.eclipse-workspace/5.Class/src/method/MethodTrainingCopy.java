@@ -63,8 +63,21 @@ public class MethodTrainingCopy {
 		String reversed = new StringBuilder(string).reverse().toString();
 		System.out.println("원본: "+string);
 		System.out.println("뒤집은 결과: "+reversed);
+		
+		/* 강사님의 방법
+		 * String result = reserveString(string);
+		 * 
+		 * System.out.println("원본: "+string); System.out.println("뒤집은 결과: "+result);
+		 */
 		printSeparator();
 	}
+	//문자열 뒤집기 메서드
+	/* 강사님의 방법
+	 * private static String reserveString(String string) { String result ="";
+	 * 
+	 * //문자열 뒤에서부터 앞으로 읽기 for(int i = string.length()-1; i >= 0; i--) { char ch =
+	 * string.charAt(i); result += ch; } return result; }
+	 */
 
 	public static void solveFindPrime(Scanner scanner) {
 		System.out.println("\n=== 문제 2: 소수 판별하기 === ");

@@ -33,7 +33,12 @@ public class SimpleCalculator {
 					result = multiply(num1, num2);
 					break;
 				case "/":
-					result = divide(num1, num2);
+					if(num2 != 0) {
+						result = divide(num1, num2);
+					} else {
+						System.out.println("❌ 0으로 나눌 수 없습니다.");
+						valid = false;
+					}
 					break;
 				default:
 					System.out.println("❌ 지원하지 않는 연산자입니다.");
@@ -58,13 +63,9 @@ public class SimpleCalculator {
 		System.out.println("👏 계산기를 종료합니다.");
 	}
 
-	private static Double divide(double num1, double num2) {
+	private static double divide(double num1, double num2) {
 		// TODO Auto-generated method stub
-		if(num2 == 0) {
-			System.out.println("❌ 0으로 나눌 수 없습니다.");
-			return null;
-		} else
-			return num1/num2;
+		return num1/num2;
 		
 	}
 
