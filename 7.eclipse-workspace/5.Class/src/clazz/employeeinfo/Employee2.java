@@ -6,5 +6,5 @@ public class Employee2 {
 	int salary;
 	double score;
 	boolean isRegular;
-	String department;
+	char department;
 }
