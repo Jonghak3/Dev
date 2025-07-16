@@ -47,7 +47,7 @@ public class EmployeeMain2 {
 		printStatistics(employees);
 			
 			
-		
+		scanner.close();
 	
 	}
 	// 통계 점수 출력 메서드
