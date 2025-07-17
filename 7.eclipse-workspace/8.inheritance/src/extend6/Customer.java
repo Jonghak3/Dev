@@ -1,0 +1,116 @@
+package extend6;
+
+/*
+ * 속성 : 고객 아이디, 고객 이름, 고객 등급, 포인트, 포인트 적립비율
+ * 기능 : showInfo() 
+ * 		 물품 구매 시 1% 포인트 적립
+ * 
+ */
+public class Customer {
+	protected String id;
+	protected String name;
+	protected String grade;
+	protected int point;
+	protected double percent;
+	protected int agent;
+	
+	public Customer(String id, String name, int point) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.grade = "silver";
+		this.percent = 0.01;
+		this.agent = 0;
+		this.point = point;
+	}
+	
+	
+	
+	public String getId() {
+		return id;
+	}
+
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public String getGrade() {
+		return grade;
+	}
+
+
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
+
+
+	public int getPoint() {
+		return point;
+	}
+
+
+
+	public void setPoint(int point) {
+		this.point = point;
+	}
+
+
+
+	public double getPercent() {
+		return percent;
+	}
+
+
+
+	public void setPercent(double percent) {
+		this.percent = percent;
+	}
+
+
+
+	public int getAgent() {
+		return agent;
+	}
+
+
+
+	public void setAgent(int agent) {
+		this.agent = agent;
+	}
+
+
+
+	public void showInfo(int price) {
+		System.out.println("=== 일반 고객 정보 ===");
+		System.out.println(name+"님의 등급은 "+grade+"이며, 보너스 포인트는 "+point+"입니다.");
+		System.out.println("상품 가격: "+price+"원");
+		System.out.println("지불 금액: "+price+"원");
+		System.out.println("구매 후 정보: "+name+"님의 등급은 "+grade+"이며, 보너스 포인트는 "+point+"입니다");
+	}
+	
+
+	
+	public void stack(int price) {
+		point += price*percent;
+	}
+	
+	
+}
