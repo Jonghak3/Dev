@@ -1,4 +1,4 @@
-package extend6;
+package extend6.teachersVersion;
 
 /*
  * 속성 : 고객 아이디, 고객 이름, 고객 등급, 포인트, 포인트 적립비율
@@ -6,7 +6,7 @@ package extend6;
  * 		 물품 구매 시 1% 포인트 적립
  * 
  */
-public class Customer {
+public class CustomerT {
 	protected String id;
 	protected String name;
 	protected String grade;
@@ -14,7 +14,7 @@ public class Customer {
 	protected double percent;
 	protected int agent;
 	
-	public Customer(String id, String name, int point) {
+	public CustomerT(String id, String name, int point) {
 		super();
 		this.id = id;
 		this.name = name;

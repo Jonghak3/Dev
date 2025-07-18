@@ -1,4 +1,4 @@
-package extend6;
+package extend6.teachersVersion;
 
 /*
  *  * 멤버십 프로그램을 구현하시오.
@@ -9,10 +9,10 @@ package extend6;
  * 
  * 
  */
-public class CustomerMain {
+public class CustomerMainT {
 
 	public static void main(String[] args) {
-		Customer cus1 = new Customer("001", "이순신", 1000);
+		CustomerT cus1 = new CustomerT("001", "이순신", 1000);
 		
 		cus1.showInfo();
 	}
