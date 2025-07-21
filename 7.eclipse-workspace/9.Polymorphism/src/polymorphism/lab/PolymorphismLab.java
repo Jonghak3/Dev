@@ -201,14 +201,16 @@ public class PolymorphismLab {
 		
 		
 		//4. 전체 급여 통계
+		int totalSalary = 0;
 		for(Employee employee : employees) {
 			employee.calculateSalary();
 			employee.printEmployeeInfo();
+			totalSalary += employee.calculateSalary();
 		}
 		
 		System.out.println("급여 통계");
 		System.out.println("===============");
 		System.out.println("총 직원 수: "+employees.length+"명");
-		System.out.println("총 급여 지출: "++"만원");
+		System.out.println("총 급여 지출: "+totalSalary+"만원");
 		};
 	}
