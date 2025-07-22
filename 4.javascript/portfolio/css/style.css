@@ -246,3 +246,16 @@ section {
     transform: scale(1.05);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
+
+/*스킬 섹션*/
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.skills-title {
+    
+}
+
