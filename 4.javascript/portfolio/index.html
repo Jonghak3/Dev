@@ -37,14 +37,14 @@
                         새로운 기술을 배우는 것을 좋아하며, 클린하고 효율적인 코드를 작성하기 위해 노력합니다.
                     </p>
                     <div class="profile-buttons">
-                        <button class="btn-primary" onclick="">프로젝트 보기</button>
+                        <a href="#projects" class="btn-primary">프로젝트 보기</a>
                         <button class="btn-secondary" onclick="">이력서 다운로드</button>
                     </div>
                     <div class="sosial-links">
-                        <button class="sosial-btn github" onclick="">🌘</button>
-                        <button class="sosial-btn linkedin" onclick="">🔗</button>
-                        <button class="sosial-btn email" onclick="">📧</button>
-                        <button class="sosial-btn portfolio" onclick="">🌐</button>
+                        <a href="https://github.com/Jonghak3" target="_blank" rel="noopener noreferrer" class="sosial-btn github">🌘</a>
+                        <a href="https://www.linkedin.com/in/jonghak-hong-360722376/" target="_blank" rel="noopener noreferrer" class="sosial-btn linkedin">🔗</a>
+                        <a href="mailto:ghdwhdgkr92@gmail.com" class="sosial-btn email">📧</a>
+                        <a href="#home" class="sosial-btn portfolio">🌐</a>
                     </div>
                 </div>
                 <div class="profile-images">
@@ -60,16 +60,33 @@
     <!--소개 섹션-->
     <section class="intro" id="about">
         <div class="container">
-            <h1>자기 소개 상세</h1>
-            <p>CSS는 오픈 웹의 핵심 언어 중 하나이며, W3C 명세가 다양한 브라우저의 표준으로 작동하고 있습니다. 
-                과거에는 CSS 명세의 다양한 부분을 순차적으로 개발했으므로 CSS1, CSS2.1, CSS3처럼 버전을 붙이는 것이 가능했습니다. 
-                그러나 공식 버전이 CSS4로 올라가지는 않을 것입니다.
-                CSS3 이후, CSS 명세의 범위가 엄청나게 넓어짐에 따라 여러 CSS 모듈 사이의 차이도 너무나 커졌습니다. 
-                그래서 이제는 권고안을 모듈별로 개발하고 공개하는 것이 더 효과적인 상황입니다. 이제 W3C는 CSS 명세의 버전을 올리지 않고, 
-                대신 주기적으로 CSS 명세 안정판의 스냅샷을 생성하고 있습니다.
-            </p>
-            <div class="intro-etc">
-
+            <h1 class="intro-title">소개</h1>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h3>사용자와 비즈니스를 모두 만족시키는 개발자</h3>
+                    <p>
+                        안녕하세요! 끊임없이 배우고 성장하는 것을 즐기는 <strong>자바 풀스택 개발자를 희망하는 홍종학</strong>입니다. 저는 복잡한 문제 해결에 강한 흥미를 느끼며, 안전한 백엔드를 설계하고 직관적인 프론트엔드를 구현하는 일에 열정을 쏟고 있습니다.
+                        <br><br>
+                        다양한 팀 프로젝트 경험을 통해 얻은 원활한 커뮤니케이션 능력과 Git/GitHub을 활용한 효율적인 버전 관리 능력을 바탕으로 동료들과 시너지를 내는 것을 중요하게 생각합니다. 클린 코드와 꾸준한 코드 리뷰를 통해 유지보수하기 좋은 소프트웨어를 만드는 것을 목표로 하고 있습니다.
+                    </p>
+                </div>
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">🏆</span>
+                        <span class="stat-number">1+</span>
+                        <span class="stat-label">완성된 프로젝트</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🚀</span>
+                        <span class="stat-number">70+</span>
+                        <span class="stat-label">Github 커밋</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🔥</span>
+                        <span class="stat-number">60+</span>
+                        <span class="stat-label">연속 학습일</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -78,33 +95,116 @@
         <div class="skills-container">
             <div class="skills-content">
                 <h1 class="skills-title">기술 스택</h1>
-                <div class="skills-menu 1col">
-                    <h3>핵심언어</h3>
-                    <h5>Java, JavaScript</h5>
-                    <h3>데이터베이스</h3>
-                    <h5>SQL, MySQl, JDBC</h5>
-                </div>
-                <div class="skills-menu 2col">
-                    <h3>프론트엔드</h3>
-                    <h5>HTML5, CSS3, JS프레임워크</h5>
-                    <h3>버전 관리</h3>
-                    <h5>Git,Github</h5>
-                </div>
-                <div class="skills-menu 3col">
-                    <h3>백엔드</h3>
-                    <h5>스프링 프레임워크, 스프링 부트</h5>
-                    <h3>DevOps 및 배포</h3>
-                    <h5>Docker, AWS</h5>
-                </div>
-                <div>
-
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>핵심 언어</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>데이터베이스</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">JDBC</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>프론트엔드</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JS 프레임워크</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>버전 관리</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>백엔드</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">스프링 프레임워크</span>
+                            <span class="skill-tag">스프링 부트</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps 및 배포</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!--프로젝트 섹션-->
-    <section class="projects" id="projects">
-
+     <section class="projects" id="projects">
+        <div class="container">
+            <h1 class="projects-title">프로젝트</h1>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <a href="index.html" target="_blank" class="project-link">
+                        <div class="project-image-placeholder">
+                            <span class="project-icon">🌐</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-name">개인 포트폴리오 웹사이트</h3>
+                            <p class="project-description">
+                                HTML, CSS, JavaScript를 사용하여 제작한 반응형 개인 포트폴리오입니다. 저의 기술 스택과 프로젝트 경험을 시각적으로 보여줍니다.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="#" class="project-link">
+                        <div class="project-image-placeholder">
+                            <span class="project-icon">🚀</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-name">팀 협업 프로젝트 (더미)</h3>
+                            <p class="project-description">
+                                어쩌고 저쩌고 저쩌고 어쩌고 어쩌고 저쩌고 저쩌고 어쩌고 어쩌고 저쩌고 저쩌고 어쩌고 어쩌고 저쩌고 저쩌고 어쩌고
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">MySQL</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="#" class="project-link">
+                         <div class="project-image-placeholder">
+                            <span class="project-icon">✨</span>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-name">개인 프로젝트 (더미)</h3>
+                            <p class="project-description">
+                                어쩌고 저쩌고 저쩌고 어쩌고 어쩌고 저쩌고 저쩌고 어쩌고 어쩌고 저쩌고 저쩌고 어쩌고 어쩌고 저쩌고 저쩌고 어쩌고
+                            </p>
+                             <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
     <!--연락처-->
     <section class="contact" id="contact">

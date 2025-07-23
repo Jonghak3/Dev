@@ -247,7 +247,127 @@ section {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* 소개 섹션 스타일 */
+.intro {
+    background-color: #f9f9f9; 
+    padding: 6rem 0;
+}
+
+.intro-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.intro-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 텍스트와 통계 영역을 2:1 비율로 배치 */
+    gap: 4rem;
+    align-items: center;
+}
+
+.intro-text h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.intro-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 통계 아이템을 3열로 배치 */
+    gap: 1.5rem;
+}
+
+.stat-item {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px var(--shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--secondary-color);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* 소개 섹션 반응형 */
+@media screen and (max-width: 992px) {
+    .intro-content {
+        grid-template-columns: 1fr; /* 화면이 작아지면 1열로 변경 */
+        gap: 3rem;
+    }
+    .intro-text {
+        text-align: center;
+    }
+    /* 태블릿 사이즈에서는 통계 아이템을 한 줄로 나열 */
+    .intro-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .intro-text h3 {
+        font-size: 1.5rem;
+    }
+    .intro-text p {
+        font-size: 1rem;
+    }
+    /* 992px 규칙이 이미 적용되므로, 특별한 변경이 없다면 이 부분은 그대로 두거나 비워도 됩니다. */
+}
+
 /*스킬 섹션*/
+
+.skills {
+    background-color: var(--white);
+    text-align: center;
+}
 
 .skills-container {
     max-width: 1200px;
@@ -256,6 +376,218 @@ section {
 }
 
 .skills-title {
-    
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    position: relative;
+    display: inline-block; /* 밑줄 효과를 위해 인라인 블록으로 설정 */
 }
+
+/* 제목 밑줄 효과 */
+.skills-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /*반응형 동작 가능!*/
+    gap: 2rem; 
+    text-align: left;
+}
+
+.skill-category {
+    background-color: #f8f8f8; 
+    border-radius: 10px; 
+    padding: 1.5rem; 
+    box-shadow: 0 5px 15px var(--shadow); 
+    transition: transform 0.3s ease; 
+}
+
+.skill-category:hover {
+    transform: translateY(-5px); /*호버 시 위로 이동*/
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color); 
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color); 
+    padding-bottom: 0.5rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap; /*태그 줄 관리 자동 줄넘기기*/
+    gap: 0.75rem; 
+}
+
+.skill-tag {
+    background-color: #e0e0e0; 
+    color: var(--text-color);
+    padding: 0.6rem 1.2rem; 
+    border-radius: 20px; 
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer; 
+    transition: all 0.3s ease; /* 전환 효과 */
+    border: 1px solid #d0d0d0; 
+    white-space: nowrap; /* 태그 안의 텍스트가 줄 바꿈 되지 않도록 */
+}
+
+.skill-tag:hover {
+    background-color: var(--primary-color); /* 호버 시 주-색상 변경 */
+    color: var(--white); 
+    transform: translateY(-2px); /* 호버 시 위 이동 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* 선택된 스킬 태그 스타일 (JavaScript로 토글될 예정) */
+.skill-tag.selected {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--white); 
+    border-color: var(--primary-color); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+    font-weight: 600; 
+    transform: scale(1.02); 
+}
+
+/* 모바일 반응형 (Skills 섹션) */
+@media screen and (max-width: 767px) {
+    .skills-title {
+        font-size: 2rem;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr; /* 모바일에서는 한 줄 정렬 */
+    }
+}
+
+/* 프로젝트 섹션 스타일 */
+.projects {
+    background-color: var(--white);
+    padding: 6rem 0;
+}
+
+.projects-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.projects-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.project-card {
+    background: #f9f9f9;
+    border-radius: 15px;
+    overflow: hidden; /* 자식 요소가 카드를 벗어나지 않도록 */
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: all 0.3s ease;
+    display: flex; /* 내부 컨텐츠 정렬을 위해 */
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 링크가 카드 전체를 덮도록 */
+}
+
+.project-image-placeholder {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-icon {
+    font-size: 4rem;
+    color: white;
+}
+
+.project-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* 컨텐츠가 남은 공간을 모두 차지하도록 */
+}
+
+.project-name {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1; /* 설명이 남은 공간을 차지해 태그를 아래로 밀어냄 */
+    margin-bottom: 1rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto; /* 태그를 카드 하단에 고정 */
+}
+
+.project-tags .tag {
+    background-color: #e0e0e0;
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* 프로젝트 섹션 반응형 */
+@media screen and (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
