@@ -7,14 +7,19 @@ package extend6.teachersVersion;
  * 
  */
 public class CustomerT {
-	protected String id;
+	protected int id;
 	protected String name;
 	protected String grade;
 	protected int point;
 	protected double percent;
 	protected int agent;
 	
-	public CustomerT(String id, String name, int point) {
+	public CustomerT() {
+		this.grade = "silver";
+		this.percent = 0.01;
+	}
+	
+	public CustomerT(int id, String name, int point) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -26,13 +31,13 @@ public class CustomerT {
 	
 	
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
 
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -95,25 +100,16 @@ public class CustomerT {
 	public void setAgent(int agent) {
 		this.agent = agent;
 	}
-
-
-
-	public void showInfo() {
-		System.out.println("=== 일반 고객 정보 ===");
-		System.out.println(name+"님의 등급은 "+grade+"이며, 보너스 포인트는 "+point+"입니다.");
-		System.out.println("상품 가격: "+""+"원");
-		System.out.println("지불 금액: "+""+"원");
-		System.out.println("구매 후 정보: "+name+"님의 등급은 "+grade+"이며, 보너스 포인트는 "+point+"입니다");
-	}
 	
+	//일반 고객 : 할인없음. 1% 보너스 적립
 	public int calcPrice(int price) {
+		point += price*percent;
 		return price;
 	}
 	
-
-	
-	public void stack(int price) {
-		point += price*percent;
+	public String showInfo() {
+		return name+"님의 등급은 "+grade+"이며, 보너스 포인트는 "+
+				point+"입니다.";
 	}
 	
 	

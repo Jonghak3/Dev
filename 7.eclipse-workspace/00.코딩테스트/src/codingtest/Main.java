@@ -6,19 +6,18 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int h, m, x, y;
-		h = sc.nextInt();
-		m = sc.nextInt();
-		x = sc.nextInt();
-		y = h*60+m+x;
+		int totalPrice, itemCount;
+		totalPrice = sc.nextInt();
+		itemCount = sc.nextInt();
+		int a,b;
+		int sum = 0;
+		for(int i =1 ; i <= itemCount; i++) {
+			a = sc.nextInt();
+			b = sc.nextInt();
+			sum += a*b;
+		}
+		System.out.println((totalPrice==sum)?"Yes" : "No");
 		
-		if( y >= 60*24) {
-			h = (y - 60*24)/60;
-			m = (y-60*24)%60;
-		} else if (y < 60*24) {
-			h = h+(m+x)/60;
-		} 
-
 		sc.close();
 		
 	}

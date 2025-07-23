@@ -12,8 +12,45 @@ package extend6.teachersVersion;
 public class CustomerMainT {
 
 	public static void main(String[] args) {
-		CustomerT cus1 = new CustomerT("001", "이순신", 1000);
+		//일반 고객
+		CustomerT customerLee = new CustomerT();
+		customerLee.setName("이순신");
+		customerLee.setPoint(1000);
 		
-		cus1.showInfo();
+		System.out.println("=== 일반 고객 정보 ===");
+		System.out.println(customerLee.showInfo());
+		
+		//10,000원 상품 구매
+		int price = 10000;
+		int payAmount = customerLee.calcPrice(price);
+		System.out.println("상품 가격 : "+price+"원");
+		System.out.println("지불 금액 : "+payAmount+"원");
+		System.out.println("구매 후 정보 : "+customerLee.showInfo());
+		
+		//VIP 고객
+		VIPCustomerT customerShin = new VIPCustomerT();
+		customerShin.setName("신사임당");
+		customerShin.setPoint(10000);
+		customerShin.setAgentID(12345);
+			
+		System.out.println();
+		System.out.println("=== VIP 고객 정보 ===");
+		System.out.println(customerShin.showInfo());
+		
+		//10,000원 상품 구매
+		int vipPayment = customerShin.calcPrice(price);
+		System.out.println("상품 가격 : "+price+"원");
+		System.out.println("할인 적용 지불 금액 : "+vipPayment+"원 (10% 할인)");
+		System.out.println("구매 후 정보 : "+customerShin.showInfo());
+		System.out.println();
+		
+		System.out.println("=== 혜택 비교 ===");
+		System.out.println("일반 고객 지불액 : "+payAmount);
+		System.out.println("VIP 고객 지불액 : "+vipPayment);
+		System.out.println("VIP 할인 혜택 : "+(payAmount-vipPayment));
+		
+		
+		
+		
 	}
 }

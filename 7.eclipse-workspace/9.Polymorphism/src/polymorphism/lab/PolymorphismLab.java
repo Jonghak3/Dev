@@ -198,9 +198,6 @@ public class PolymorphismLab {
 		Employee[] employees = {emp1, emp2, emp3, emp4, emp5};
 		
 		//3. 개별 급여 계산
-		
-		
-		//4. 전체 급여 통계
 		int totalSalary = 0;
 		for(Employee employee : employees) {
 			employee.calculateSalary();
@@ -208,6 +205,7 @@ public class PolymorphismLab {
 			totalSalary += employee.calculateSalary();
 		}
 		
+		//4. 전체 급여 통계
 		System.out.println("급여 통계");
 		System.out.println("===============");
 		System.out.println("총 직원 수: "+employees.length+"명");
