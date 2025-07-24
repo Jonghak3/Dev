@@ -6,17 +6,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int totalPrice, itemCount;
-		totalPrice = sc.nextInt();
-		itemCount = sc.nextInt();
-		int a,b;
-		int sum = 0;
-		for(int i =1 ; i <= itemCount; i++) {
+		int t, a, b;
+		t = sc.nextInt();
+		for(int i = 1 ; i <= t; i++) {
 			a = sc.nextInt();
 			b = sc.nextInt();
-			sum += a*b;
+			System.out.println("Case #"+i+": "+a+" + "+b+" = "+(a+b));
 		}
-		System.out.println((totalPrice==sum)?"Yes" : "No");
+		
 		
 		sc.close();
 		

@@ -109,6 +109,8 @@ section {
     width: 100%;    /*호버 시 전체 너비로 확장*/
 
 } 
+
+
 /*메인 섹션*/
 .main_profile {
     /*대각선 그라디언트 배경*/
@@ -245,6 +247,34 @@ section {
 .profile-image:hover {
     transform: scale(1.05);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+/*메인 섹션 미디어 쿼리*/
+@media screen and (max-width: 880px) {
+    .profile-content {
+        grid-template-columns: 1fr;     /*두 개의 동일한 너비 열*/
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .profile-title {
+        font-size: 2rem;
+        margin-bottom: 0.7rem;
+        line-height: 0.9;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .profile-content {
+        grid-template-columns: 1fr;     /*두 개의 동일한 너비 열*/
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .profile-title {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+        line-height: 0.5;
+    }
 }
 
 /* 소개 섹션 스타일 */
