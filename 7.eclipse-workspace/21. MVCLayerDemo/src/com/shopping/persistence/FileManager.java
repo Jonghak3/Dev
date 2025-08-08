@@ -27,7 +27,7 @@ public class FileManager {
 	public static <T> List<T> readFromFile(String fileName) {
 		//파일 경로
 		String fullPath = normalizePath(fileName);
-		File file = new File(fileName);
+		File file = new File(fullPath);
 		
 		//파일이 존재하지 않는 경우
 		if(!file.exists()) {
@@ -59,6 +59,14 @@ public class FileManager {
 	}
 
 	// 파일 경로 정규화
+	/* 	- 파일 경로를 표준 형태로 만들어주는 것
+	 * 	- 비유) "서울시 마포구" 
+	 * 			"서울/마포"
+	 * 			"서울\마포"
+	 * 	- data/user.dat
+	 *    data_\_users.dat
+	 * 
+	 */
 	//운영체제에 관계없이 올바른 경로 반환
 	private static String normalizePath(String fileName) {
 		// 이미 경로가 포함된 경우 그대로 반환

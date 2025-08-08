@@ -1,5 +1,7 @@
 package com.shopping;
 
+import com.shopping.controler.MainController;
+
 /*
  * == 메인 메뉴 ==
  * 로그인되지 않음
@@ -57,4 +59,9 @@ package com.shopping;
  */
 public class Main {
 
+	public static void main(String[] args) {
+		//메인 컨트롤러 인스턴스 생성
+		MainController mainController = new MainController();
+		mainController.start();
+	}
 }
