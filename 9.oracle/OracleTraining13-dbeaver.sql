@@ -1,0 +1,8 @@
+--세션 2
+SELECT * FROM dept_tcl;
+
+--세션 2
+UPDATE DEPT_TCL SET DNAME = 'DATABASE' WHERE DEPTNO = 30;
+
+--세션 2
+SELECT * FROM dept_tcl;
